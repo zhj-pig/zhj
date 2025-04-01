@@ -1,0 +1,343 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 20 14.3% 4.1%;
+--card: 0 0% 100%;
+--card-foreground: 20 14.3% 4.1%;
+--popover: 0 0% 100%;
+--popover-foreground: 20 14.3% 4.1%;
+--primary: 47.9 95.8% 53.1%;
+--primary-foreground: 26 83.3% 14.1%;
+--secondary: 60 4.8% 95.9%;
+--secondary-foreground: 24 9.8% 10%;
+--muted: 60 4.8% 95.9%;
+--muted-foreground: 25 5.3% 44.7%;
+--accent: 60 4.8% 95.9%;
+--accent-foreground: 24 9.8% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 60 9.1% 97.8%;
+--border: 20 5.9% 90%;
+--input: 20 5.9% 90%;
+--ring: 20 14.3% 4.1%;
+--radius: 0.95rem;
+				}
+				.dark {
+					--background: 20 14.3% 4.1%;
+--foreground: 60 9.1% 97.8%;
+--card: 20 14.3% 4.1%;
+--card-foreground: 60 9.1% 97.8%;
+--popover: 20 14.3% 4.1%;
+--popover-foreground: 60 9.1% 97.8%;
+--primary: 47.9 95.8% 53.1%;
+--primary-foreground: 26 83.3% 14.1%;
+--secondary: 12 6.5% 15.1%;
+--secondary-foreground: 60 9.1% 97.8%;
+--muted: 12 6.5% 15.1%;
+--muted-foreground: 24 5.4% 63.9%;
+--accent: 12 6.5% 15.1%;
+--accent-foreground: 60 9.1% 97.8%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 60 9.1% 97.8%;
+--border: 12 6.5% 15.1%;
+--input: 12 6.5% 15.1%;
+--ring: 35.5 91.7% 32.9%;
+				}
+			}
+		</style>
+  </head>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<body class="dark:bg-background">
+    <!-- Header -->
+    <header>
+        <img src="src/mokuai.jpg" alt="Header" >
+        <nav class="bg-primary dark:bg-card sticky top-0 shadow-lg">
+            <div class="container mx-auto flex justify-between items-center py-4">
+                <button id="homeButton" class="text-primary-foreground hover:text-accent transition-colors">
+                    &emsp;&emsp;首页
+                </button>
+                <div class="flex space-x-6">
+                    <button data-section="1" class="nav-btn">场地介绍</button>
+                    <button data-section="2" class="nav-btn">方案构思</button>
+                    <button data-section="3" class="nav-btn">建筑图纸</button>
+                    <button data-section="4" class="nav-btn">构件分件</button>
+                    <button data-section="5" class="nav-btn">景观模块</button>
+                    &emsp;&emsp;
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 封面页 -->
+    <main class="container mx-auto px-4 py-8">
+        <section id="coverPage" class="bg-card p-8 rounded-xl shadow-xl">
+            <h1 class="text-4xl font-bold mb-6">极端环境装配式建筑及景观构筑物设计</h1>
+            <img src="src/baozha.jpg" alt="Cover" >
+            <p class="text-lg text-muted-foreground">建筑爆炸图</p>
+        </section>
+
+        <!-- 五个内容区块 -->
+        <section id="section-1" class="project-page hidden">
+            <div class="bg-card p-8 rounded-xl shadow-xl mt-8">
+                <h2 class="text-3xl font-bold mb-6">场地介绍</h2>
+                <p class="text-muted-foreground leading-relaxed">场地位于西藏自治区那曲市班戈县佳琼镇那高查村</p>
+                <p class="text-muted-foreground leading-relaxed">地处高原，生产、运输以及装配条件受到一定限制</p>
+                <p class="text-muted-foreground leading-relaxed">冰川融水径流量76.59亿立方米，是那曲河流、湖泊的重要补给水源</p>
+                <p class="text-muted-foreground leading-relaxed">建造地点的气候特点，高寒，干燥，日照充足，昼夜温差大</p>
+                &emsp;&emsp;
+                <div class="grid grid-cols-2 gap-6 mb-6">
+                    <img src="src/changdi.png" alt="Module" class="h-80 w-full object-cover rounded-lg">
+                    <img src="src/changdi2.jpg" alt="Explode" class="h-80 w-full object-cover rounded-lg">
+                </div>
+                <p class="text-muted-foreground leading-relaxed">场地位置及鸟瞰</p>
+                <div class="mt-6 pt-4 border-t border-border">
+                    <p class="text-sm text-muted-foreground">我选择的场地在新居民委员会南侧，场地开阔，南侧没有遮挡且距离道路较近</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-2" class="project-page hidden">
+            <div class="bg-card p-8 rounded-xl shadow-xl mt-8">
+                <h2 class="text-3xl font-bold mb-6">方案构思</h2>
+                <div class="grid grid-cols-2 gap-6 mb-6">
+                    <img src="src/草图.jpg" alt="Module" class="h-full w-100 object-cover rounded-lg">
+                    <img src="src/设备.png" alt="Explode" class="h-85 w-100 object-cover rounded-lg">
+                </div>
+                <div class="grid grid-cols-2 gap-6 mb-6">
+                <p class="text-muted-foreground leading-relaxed">根据装备设施的尺寸
+                    <br>较小型叉车等在3x3m的正方形可以自由转弯
+                    <br>较大的设备如剪刀升降机可以在3m宽的区域行动
+                    <br>我将场地分割成3x3m的方块
+                    </p>
+                <p class="text-muted-foreground leading-relaxed">中间放置建筑
+                    <br>周围分布各种设施，包括光伏发电，中水处理等
+                    <br>将光伏发电中水处理等设施设计成可移动的模块，分布在建筑周围的场地里
+                    <br>建筑和设施之间留下建造设备的活动空间                    
+                    </p>
+                </div>
+                <img src="src/轴测.jpg" alt="Module" >
+                <p class="text-muted-foreground leading-relaxed"> &emsp;&emsp;
+                    <br>根据主导风向为北风，门设置为朝南向
+                    <br>曲面弧线型从牧区帐篷中提取
+                    <br>中间加上天井增加采光
+                    <br>中间天井在施工时可用于固定吊车
+                    <br>保留部分施工坡道
+                    </p>
+            </div>
+        </section>
+
+        <section id="section-3" class="project-page hidden">
+            <div class="bg-card p-8 rounded-xl shadow-xl mt-8">
+                <h2 class="text-3xl font-bold mb-6">建筑图纸</h2>
+                <div class="flex flex-col space-y-6">
+                    <h3 class="text-xl font-semibold mb-3">总平面</h3>
+                    <img src="src/总平面.jpg" alt="Axonometric" class="w-full rounded-lg">
+                    <h3 class="text-xl font-semibold mb-3">平面图</h3>
+                    <img src="src/平面图.jpg" alt="Axonometric" class="w-full rounded-lg">
+                    <h3 class="text-xl font-semibold mb-3">南立面</h3>
+                    <img src="src/南立面.jpg" alt="Axonometric" class="w-full rounded-lg">
+                    <h3 class="text-xl font-semibold mb-3">东立面</h3>
+                    <img src="src/东立面.jpg" alt="Axonometric" class="w-full rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <section id="section-4" class="project-page hidden">
+            <div class="bg-card p-8 rounded-xl shadow-xl mt-8">
+                <h2 class="text-3xl font-bold mb-6">构件分件</h2>
+                <div class="flex flex-col space-y-6">
+                    <div class="bg-background p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3">构件</h3>
+                        <div class="grid grid-cols-2 gap-0 mb-6">
+                        <p class="text-muted-foreground">曲面屋顶1,2,3
+                            <br>平屋顶1,2
+                            <br>围护1,2,3,4,5
+                            <br>基础
+                            </p>
+                        <img src="src/构件.jpg" alt="Module" class="h-80 w-full object-cover rounded-lg">
+                        </div>
+                    </div>
+                    <img src="src/构件.png" alt="Axonometric" class="w-full rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <section id="section-5" class="project-page hidden">
+            <div class="bg-card p-8 rounded-xl shadow-xl mt-8">
+                <h2 class="text-3xl font-bold mb-6">景观模块</h2>
+                <div class="flex flex-col space-y-6">
+                    <div class="bg-background p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3">景观构筑物设计</h3>
+                        <p class="text-muted-foreground">尝试使用建筑构件组合成为各种场地上所需的景观构筑物</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <img src="src/mokuai1.jpg" alt="Module" class="h-80 w-80 object-cover rounded-lg">
+                        <p class="text-muted-foreground">入口标志
+                            <br>纪念性构筑物
+                            </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <img src="src/mokuai2.jpg" alt="Module" class="h-80 w-80 object-cover rounded-lg">
+                        <p class="text-muted-foreground">临时居住
+                            <br>建设时用于居住
+                            <br>建设完可用于贮藏
+                            </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <img src="src/mokuai3.jpg" alt="Module" class="h-80 w-80 object-cover rounded-lg">
+                        <p class="text-muted-foreground">平台
+                            <br>可用于放置光伏电板
+                            <br>抬高避免刺眼
+                            </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <img src="src/mokuai4.jpg" alt="Module" class="h-80 w-80 object-cover rounded-lg">
+                        <p class="text-muted-foreground">植物暖房
+                            <br>避风保温种植植物
+                            </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <img src="src/mokuai5.jpg" alt="Module" class="h-80 w-80 object-cover rounded-lg">
+                        <p class="text-muted-foreground">中水处理
+                            <br>遮挡大风
+                            <br>必要可以供暖提高水处理效率
+                            </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <img src="src/mokuai6.jpg" alt="Module" class="h-80 w-80 object-cover rounded-lg">
+                        <p class="text-muted-foreground">风力发电
+                            <br>增加风速
+                            </p>
+                    </div>
+                    <div class="bg-background p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3">景观模块组合</h3>
+                        <p class="text-muted-foreground">尝试在场地上摆放这些景观构筑物模块</p>
+                    </div>
+                    <img src="src/模块场景1.jpg" alt="Axonometric" class="w-full rounded-lg">
+                    <img src="src/模块场景2.jpg" alt="Axonometric" class="w-full rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- 分页控制 -->
+        <div id="navigation" class="hidden mt-8 flex justify-between items-center">
+            <button id="prevBtn" class="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
+                ← 上一页
+            </button>
+            <span id="pageIndicator" class="text-muted-foreground">Page 1 of 5</span>
+            <button id="nextBtn" class="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
+                下一页 →
+            </button>
+        </div>
+    </main>
+
+    <script>
+        let currentSection = 1;
+        const totalSections = 5;
+
+        // 显示指定section
+        function showSection(sectionNumber) {
+            // 隐藏所有section
+            document.querySelectorAll('.project-page').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // 显示封面或指定section
+            if(sectionNumber === 0) {
+                document.getElementById('coverPage').classList.remove('hidden');
+                document.getElementById('navigation').classList.add('hidden');
+            } else {
+                document.getElementById('coverPage').classList.add('hidden');
+                document.getElementById(`section-${sectionNumber}`).classList.remove('hidden');
+                document.getElementById('navigation').classList.remove('hidden');
+                updatePageIndicator(sectionNumber);
+                currentSection = sectionNumber;
+            }
+        }
+
+        // 更新页码显示
+        function updatePageIndicator(page) {
+            document.getElementById('pageIndicator').textContent = `Page ${page} of ${totalSections}`;
+        }
+
+        // 事件监听
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const section = parseInt(btn.dataset.section);
+                showSection(section);
+            });
+        });
+
+        document.getElementById('homeButton').addEventListener('click', () => {
+            showSection(0);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if(currentSection > 1) {
+                showSection(currentSection - 1);
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if(currentSection < totalSections) {
+                showSection(currentSection + 1);
+            }
+        });
+
+        // 初始化显示封面
+        showSection(0);
+    </script>
+</body>
+</html>
